@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samgyupiee - Order</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brown: {
+              light: '#8B6B4D',
+              DEFAULT: '#361f10',
+              dark: '#1a110b'
+            }
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            noto: ['Noto Serif', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-inter leading-relaxed text-brown-light">
+  <div class="min-h-screen bg-[url('assets/img/menubg.png')] bg-cover bg-center bg-no-repeat">
+    <header class="w-full px-[5%] py-6 flex justify-center items-center gap-5 absolute top-0 left-0 z-[2] bg-transparent">
+      <a href="index.html" class="text-brown font-medium hover:opacity-80">Home</a>
+      <a href="menu.html" id="#menu" class="text-brown font-medium hover:opacity-80">Menu</a>
+      <a href="#" class="mx-4">
+        <img src="assets/img/logo.jpg" alt="Samgyupiee Logo" class="h-[150px] w-auto" loading="lazy">
+      </a>
+      <a href="order.html" class="text-brown font-medium hover:opacity-80">Order Now</a>
+      <a href="index.html#contact" class="text-brown font-medium hover:opacity-80">Contact Us</a>
+    </header>
+
+    <div class="pt-[200px] px-8 pb-12">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-12">
+          <div class="bg-white/90 rounded-3xl shadow-xl p-8 backdrop-blur-sm space-y-6">
+            <h2 class="text-2xl font-bold text-brown-dark mb-6">Korean BBQ</h2>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Samgyupsal</h3>
+                  <p class="text-sm text-brown-light">Premium pork belly</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱499</span>
+                  <button onclick="addToCart('Samgyupsal', 499)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Woo Samgyup</h3>
+                  <p class="text-sm text-brown-light">USDA Choice beef belly</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱699</span>
+                  <button onclick="addToCart('Woo Samgyup', 699)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white/90 rounded-3xl shadow-xl p-8 backdrop-blur-sm space-y-6">
+            <h2 class="text-2xl font-bold text-brown-dark mb-6">Banchan</h2>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Kimchi Platter</h3>
+                  <p class="text-sm text-brown-light">Assorted traditional kimchi</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱199</span>
+                  <button onclick="addToCart('Kimchi Platter', 199)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Pickled Radish</h3>
+                  <p class="text-sm text-brown-light">Sweet and tangy</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱149</span>
+                  <button onclick="addToCart('Pickled Radish', 149)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white/90 rounded-3xl shadow-xl p-8 backdrop-blur-sm space-y-6">
+            <h2 class="text-2xl font-bold text-brown-dark mb-6">Beverages</h2>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Soju</h3>
+                  <p class="text-sm text-brown-light">Various flavors</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱199</span>
+                  <button onclick="addToCart('Soju', 199)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Korean Tea</h3>
+                  <p class="text-sm text-brown-light">Traditional tea selection</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱99</span>
+                  <button onclick="addToCart('Korean Tea', 99)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white/90 rounded-3xl shadow-xl p-8 backdrop-blur-sm space-y-6">
+            <div class="flex justify-between items-center mb-6">
+              <h2 class="text-2xl font-bold text-brown-dark">Set Meals</h2>
+              <a href="menu.html" class="bg-brown/10 text-brown px-4 py-2 rounded-lg hover:bg-brown/20 transition-colors flex items-center gap-2">
+                <i class="fas fa-utensils"></i>
+                <span>View Full Menu</span>
+              </a>
+            </div>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Signature Hotpot Set</h3>
+                  <p class="text-sm text-brown-light">2 Samgyupsal, 1 Woo Samgyup, Crabsticks, 4 Rice, 4 Drinks</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱799</span>
+                  <button onclick="addToCart('Signature Hotpot Set', 799)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Roast Duck Wrap Set</h3>
+                  <p class="text-sm text-brown-light">2 Woo Samgyup, Roast Duck, 3 Rice, 3 Soju</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱899</span>
+                  <button onclick="addToCart('Roast Duck Wrap Set', 899)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Seoul Street Combo</h3>
+                  <p class="text-sm text-brown-light">1 Samgyupsal, 1 Woo Samgyup, Gimbap, 2 Rice, 2 Drinks</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱395</span>
+                  <button onclick="addToCart('Seoul Street Combo', 395)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">SVT Budae Bash</h3>
+                  <p class="text-sm text-brown-light">1 Samgyupsal, Ham Sausage, 1 Rice, 1 Korean Tea</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱475</span>
+                  <button onclick="addToCart('SVT Budae Bash', 475)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">K-BBQ Set</h3>
+                  <p class="text-sm text-brown-light">2 Samgyupsal, 2 Bulgogi Samgyup, Special Banchan, 2 Rice, 2 Drinks</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱1,180</span>
+                  <button onclick="addToCart('K-BBQ Set', 1599)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Budae Jigae Set</h3>
+                  <p class="text-sm text-brown-light">Shrimp, Squid, Fish Cake, Crabsticks, 4 Rice, 4 Soju</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱1,150</span>
+                  <button onclick="addToCart('Budae Jigae Set', 1150)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Jeonghan's Grazing Platter</h3>
+                  <p class="text-sm text-brown-light">Mushroom Mix, Tofu, Premium Vegetables, 2 Rice, 2 Korean Tea</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱520</span>
+                  <button onclick="addToCart('Jeonghan\'s Grazing Platter', 520)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-xl font-semibold text-brown">Haemul Jeongol Set</h3>
+                  <p class="text-sm text-brown-light">2 Samgyupsal, 2 Bubbling Broth, 2 Rice, 2 Korean Tea</p>
+                </div>
+                <div class="flex items-center gap-4">
+                  <span class="text-lg font-bold text-brown">₱299</span>
+                  <button onclick="addToCart('Haemul Jeongol Set', 299)" class="bg-brown text-white px-4 py-2 rounded-lg hover:bg-brown-dark transition-colors">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:sticky lg:top-[200px] lg:h-[calc(100vh-200px)]">
+          <div class="bg-white/90 rounded-3xl shadow-xl p-8 backdrop-blur-sm">
+            <h2 class="text-2xl font-bold text-brown-dark mb-6">Order Cart</h2>
+            <div id="cart-items" class="space-y-4 max-h-[calc(100vh-450px)] overflow-y-auto mb-6">
+            </div>
+            
+            <div class="border-t border-brown/20 pt-4">
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-xl font-semibold text-brown">Subtotal:</span>
+                <span id="subtotal" class="text-xl font-bold text-brown">₱0.00</span>
+              </div>
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-xl font-semibold text-brown">Total:</span>
+                <span id="total" class="text-2xl font-bold text-brown">₱0.00</span>
+              </div>
+              <div class="flex gap-4">
+                <button id="clear-cart" class="flex-1 bg-brown/20 text-brown font-semibold py-3 px-6 rounded-xl hover:bg-brown/30 transition-colors">
+                  Clear Cart
+                </button>
+                <button id="checkout" class="flex-1 bg-brown text-white font-semibold py-3 px-6 rounded-xl hover:bg-brown-dark transition-colors">
+                  Checkout
+                </button>
+              </div>
+            </div>
+
+            <div id="receipt" class="hidden mt-8 p-6 bg-white rounded-xl border border-brown/20">
+              <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-brown mb-1">Samgyupiee</h3>
+                <p class="text-sm text-brown-light">Korean BBQ Restaurant</p>
+                <p class="text-sm text-brown-light" id="receipt-datetime"></p>
+              </div>
+              <div class="border-t border-b border-brown/20 py-4 my-4">
+                <div id="receipt-items" class="space-y-2">
+                    </div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between text-sm">
+                  <span class="text-brown-light">Subtotal</span>
+                  <span id="receipt-subtotal" class="text-brown"></span>
+                </div>
+                <div class="flex justify-between font-bold">
+                  <span class="text-brown">Total</span>
+                  <span id="receipt-total" class="text-brown"></span>
+                </div>
+              </div>
+              <div class="text-center mt-6 space-y-2">
+                <p class="text-sm text-brown-light">Thank you for dining with us!</p>
+                <button onclick="window.print()" class="text-sm text-brown hover:text-brown-dark">
+                  <i class="fas fa-print mr-2"></i>Print Receipt
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
